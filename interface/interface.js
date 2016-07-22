@@ -99,7 +99,7 @@ G.ready(function() {
             var tileType = $(this).attr("id");
             var pointGrid = new G.Graphic.Polygon(grid, { tileType: tileType }, {
                 outlineColor: '#000',
-                outlineWidth: 2,
+                outlineWidth: 1,
                 fillOpacity: 1
             });
             pointGrid.addTo(graphicLayer);

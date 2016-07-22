@@ -38,8 +38,23 @@ body {
     max-width: 200px;
 }
 
-#satellite-images img:hover {
-    border: 5px solid red;
+#google:hover {
+    border: 5px solid #0f0;
+    cursor: pointer;
+}
+
+#mapbox:hover {
+    border: 5px solid #103DFD;
+    cursor: pointer;
+}
+
+#amap:hover {
+    border: 5px solid #F50D0D;
+    cursor: pointer;
+}
+
+#tencent:hover {
+    border: 5px solid #F1F419;
     cursor: pointer;
 }
 
