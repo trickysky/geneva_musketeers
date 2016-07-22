@@ -1,0 +1,63 @@
+<!doctype html>
+<html style="width: 100%; height: 100%;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../geohey-js-sdk-2.5.0/3rd/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../geohey-js-sdk-2.5.0/lib/g.css">
+    <script type="text/javascript" src="../geohey-js-sdk-2.5.0/lib/g.min.js"></script>
+</head>
+
+<body style="margin: 0; padding:0; overflow: hidden; width: 100%; height: 100%">
+    <div id="mapContainer" style="width: 100%; height: 100%; background:#ccc"></div>
+    <div style="z-index: 1; position: absolute; top: 0px; padding: 10px;">
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-default" onclick="zoomIn()">+</button>
+            <button type="button" class="btn btn-default" onclick="zoomOut()">-</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var map, tileLayer;
+
+    G.ready(function() {
+
+        map = new G.Map('mapContainer', {
+            maxExtent: [-2e7, -2e7, 2e7, 2e7],
+            hideLogo: true
+        });
+
+        var mapTileServer = {
+            "osm": { "url": "http://{s}.tile.osm.org/{z}/{x}/{y}.png", "cluster": ['a', 'b', 'c'] },
+            "googleImage": { "url": "http://mt{s}.google.cn/vt/lyrs=s&hl=zh-CN&gl=cn&x={x}&y={y}&z={z}", "cluster": ['1', '2', '3'] },
+            "googleRoad": { "url": "http://mt{s}.google.cn/vt/lyrs=m&hl=zh-CN&gl=cn&x={x}&y={y}&z={z}", "cluster": ['1', '2', '3'] },
+            "amap": { "url": "http://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}", "cluster": ['1', '2', '3', '4'] },
+            "midnight": { "url": "https://s{s}.geohey.com/s/mapping/midnight/all?z={z}&x={x}&y={y}&ak=ZmVmODVkNzZhZjk3NDUzNWFlYjQ4ODcwOGFhMWQ5ZGQ", "cluster": ['1', '2', '3', '4', '5', '6', '7', '8'] },
+            "mapboxImage": { "url": "https://c.tiles.mapbox.com/v4/digitalglobe.n6ngnadl/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGlnaXRhbGdsb2JlIiwiYSI6ImNpZXg5cDNrdzA4Z25zYmtxZzRqejlvZjQifQ.io_4ypxNPrji2ngJq8x0YQ", "cluster": [] }
+        };
+
+        var mapName = mapTileServer["mapboxImage"];
+        tileLayer = new G.Layer.Tile(mapName["url"], {
+            cluster: mapName["cluster"]
+        });
+        tileLayer.addTo(map);
+
+        var p = G.Proj.WebMercator.project(116.39, 39.9);
+        map.view(p, 20000, 20000);
+
+    });
+
+    function zoomIn() {
+        if (map) {
+            map.zoomIn();
+        }
+    }
+
+    function zoomOut() {
+        if (map) {
+            map.zoomOut();
+        }
+    }
+    </script>
+</body>
+
+</html>

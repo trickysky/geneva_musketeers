@@ -20,6 +20,10 @@
         </div>
     </div>
 
+    <div class="help-button">
+        <button type="button" class="btn btn-default" onclick="sampleModal()">?</button>
+    </div>
+
     <div id="legend">
         <div id="legend-container">
             <ul>
@@ -29,11 +33,11 @@
                     </div>
                     <span> Google Map </span>
                 </li>
-                <li id="osmLegend">
+                <li id="mapboxLegend">
                     <div class="legend-symbol-wrapper">
                         <div class="legend-polygon-thumb"></div>
                     </div>
-                    <span> OpenStreetMap </span>
+                    <span> Mapbox </span>
                 </li>
                 <li id="amapLegend">
                     <div class="legend-symbol-wrapper">
@@ -41,11 +45,11 @@
                     </div>
                     <span> Amap </span>
                 </li>
-                <li id="baiduLegend">
+                <li id="tencentLegend">
                     <div class="legend-symbol-wrapper">
                         <div class="legend-polygon-thumb"></div>
                     </div>
-                    <span> Baidu Map </span>
+                    <span> Tencent Map </span>
                 </li>
             </ul>
         </div>
@@ -63,25 +67,28 @@
                 </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="row" id="satellite-images">
-                        <div class="col-sm-6 ">
-                            <img id="google" src="images/google.jpg" alt="google" class="center-block">
+                    <div id="satellite-images">
+                        <div class="row">
+                           <div class="col-sm-6 ">
+                                <img id="google" src="images/1/google.png" alt="google" class="center-block">
+                            </div>
+                            <div class="col-sm-6">
+                                <img id="amap" src="images/1/amap.png" alt="amap" class="center-block">
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <img id="amap" src="images/amap.jpg" alt="amap" class="center-block">
-                        </div>
-                        <div class="col-sm-6">
-                            <img id="osm" src="images/osm.jpg" alt="openstreetmap" class="center-block">
-                        </div>
-                        <div class="col-sm-6">
-                            <img id="baidu" src="images/baidu.jpg" alt="baidu" class="center-block">
-                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img id="mapbox" src="images/1/tencent.png" alt="mapbox" class="center-block">
+                            </div>
+                            <div class="col-sm-6">
+                                <img id="tencent" src="images/1/mapbox.png" alt="tencent" class="center-block">
+                            </div>
+                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script type="text/javascript" src="interface.js"></script>
 </body>
 

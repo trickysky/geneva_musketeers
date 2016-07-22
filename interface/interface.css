@@ -24,6 +24,13 @@ body {
     padding: 10px;
 }
 
+.help-button {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
+
 #satellite-images img {
     border: 2px solid navajowhite;
     border-radius: 20px;
@@ -89,7 +96,7 @@ body {
     background: #0f0;
 }
 
-#osmLegend .legend-polygon-thumb {
+#mapboxLegend .legend-polygon-thumb {
     background: #103DFD;
 }
 
@@ -97,6 +104,6 @@ body {
     background: #F50D0D;
 }
 
-#baiduLegend .legend-polygon-thumb {
+#tencentLegend .legend-polygon-thumb {
     background: #F1F419;
 }
