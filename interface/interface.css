@@ -1,0 +1,102 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#mapContainer {
+    width: 100%;
+    height: 100%;
+    background:#ccc;
+}
+
+.zoom-button {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+}
+
+#satellite-images img {
+    border: 2px solid navajowhite;
+    border-radius: 20px;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+#satellite-images img:hover {
+    border: 5px solid red;
+    cursor: pointer;
+}
+
+#satellite-images div {
+    margin-bottom: 20px;
+}
+
+#legend {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    max-width: 200px;
+    max-height: 240px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    cursor: pointer;
+}
+
+#legend-container {
+    padding: 6px 8px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 240px;
+    width: calc(100% + 16px);
+}
+
+#legend-container ul {
+    padding-left: 2px;
+}
+
+#legend-container li {
+    list-style-type:none;
+}
+
+.legend-symbol-wrapper {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.legend-polygon-thumb {
+    border: 1px solid #ffffff;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: -2px;
+}
+
+#googleLegend .legend-polygon-thumb {
+    background: #0f0;
+}
+
+#osmLegend .legend-polygon-thumb {
+    background: #103DFD;
+}
+
+#amapLegend .legend-polygon-thumb {
+    background: #F50D0D;
+}
+
+#baiduLegend .legend-polygon-thumb {
+    background: #F1F419;
+}

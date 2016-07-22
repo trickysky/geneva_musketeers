@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../geohey-js-sdk-2.5.0/3rd/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../geohey-js-sdk-2.5.0/lib/g.css">
+    <link rel="stylesheet" href="interface.css">
+    <script type="text/javascript" src="../geohey-js-sdk-2.5.0/lib/g.min.js"></script>
+    <script type="text/javascript" src="../geohey-js-sdk-2.5.0/3rd/jquery.min.js"></script>
+    <script type="text/javascript" src="../geohey-js-sdk-2.5.0/3rd/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="mapContainer"></div>
+    <div class="zoom-button">
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-default" onclick="zoomIn()">+</button>
+            <button type="button" class="btn btn-default" onclick="zoomOut()">-</button>
+        </div>
+    </div>
+
+    <div id="legend">
+        <div id="legend-container">
+            <ul>
+                <li id="googleLegend">
+                    <div class="legend-symbol-wrapper">
+                        <div class="legend-polygon-thumb"></div>
+                    </div>
+                    <span> Google Map </span>
+                </li>
+                <li id="osmLegend">
+                    <div class="legend-symbol-wrapper">
+                        <div class="legend-polygon-thumb"></div>
+                    </div>
+                    <span> OpenStreetMap </span>
+                </li>
+                <li id="amapLegend">
+                    <div class="legend-symbol-wrapper">
+                        <div class="legend-polygon-thumb"></div>
+                    </div>
+                    <span> Amap </span>
+                </li>
+                <li id="baiduLegend">
+                    <div class="legend-symbol-wrapper">
+                        <div class="legend-polygon-thumb"></div>
+                    </div>
+                    <span> Baidu Map </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                    Choose the best picture
+                </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="satellite-images">
+                        <div class="col-sm-6 ">
+                            <img id="google" src="images/google.jpg" alt="google" class="center-block">
+                        </div>
+                        <div class="col-sm-6">
+                            <img id="amap" src="images/amap.jpg" alt="amap" class="center-block">
+                        </div>
+                        <div class="col-sm-6">
+                            <img id="osm" src="images/osm.jpg" alt="openstreetmap" class="center-block">
+                        </div>
+                        <div class="col-sm-6">
+                            <img id="baidu" src="images/baidu.jpg" alt="baidu" class="center-block">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="interface.js"></script>
+</body>
+
+</html>
