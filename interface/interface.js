@@ -44,15 +44,15 @@ G.ready(function() {
             gridLayer.addTo(map);
         });
 
-        console.log({
-           // "center": map.getCenter()[0] + "," + map.getCenter()[1],
-           // "size": String(map.getExtent()[2] - map.getExtent()[0]) + "," + String(map.getExtent()[3] - map.getExtent()[1]),
-           //  "p1": String(map.getExtent()[0]) + ',' + String(map.getExtent()[1]),
-           //  "p2": String(map.getExtent()[2]) + ',' + String(map.getExtent()[3]),
-           //  "res": map.getResolution(),
-            "gridLayer": gridLayer,
-            "level": level
-        });
+        // console.log({
+        //    "center": map.getCenter()[0] + "," + map.getCenter()[1],
+        //    "size": String(map.getExtent()[2] - map.getExtent()[0]) + "," + String(map.getExtent()[3] - map.getExtent()[1]),
+        //     "p1": String(map.getExtent()[0]) + ',' + String(map.getExtent()[1]),
+        //     "p2": String(map.getExtent()[2]) + ',' + String(map.getExtent()[3]),
+        //     "res": map.getResolution(),
+        //     "gridLayer": gridLayer,
+        //     "level": level
+        // });
     });
 
     graphicLayer = (new G.Layer.Graphic()).addTo(map);
