@@ -1,0 +1,56 @@
+/*
+leaflet modification
+ */
+.legend svg text {
+  fill: #FFF;
+}
+
+.leaflet-control-zoom .leaflet-bar .leaflet-control {
+  z-index:1001;
+}
+
+.leaflet-tile-loaded {
+  z-index:10;
+}
+
+.info {
+  line-height: 1.5em;
+  border-radius: 0px;
+  transition: background 0.5s ease;
+  background: rgba(0,0,0,.6);
+  color: white;
+  font-weight: 100;
+  width: 250px;
+  overflow-x: hidden;
+  right: 0px;
+}
+
+.info:hover {
+  background: rgba(0,0,0,.8);
+}
+
+
+/* Button leaflet attributes*/
+
+.toolCheck {
+  display: none;
+}
+
+.toolCheck + label {
+  background: #FFF;
+  color: #000;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle
+}
+
+.toolCheck:checked + label {
+    background: #CCC;
+    border-top : 1px solid #AAA;
+    border-left :1px solid #AAA;
+}
+
