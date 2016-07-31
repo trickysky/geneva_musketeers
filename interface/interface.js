@@ -16,7 +16,7 @@ var mapTileServer = {
 }
     ;
 G.ready(function() {
-    // $('#myModal').modal('show');
+    $('#myModal').modal('show');
 
     baseMap = new G.Map('mapContainer', {
         maxExtent: [-2e7, -2e7, 2e7, 2e7],
