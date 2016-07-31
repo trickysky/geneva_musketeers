@@ -74,10 +74,13 @@ G.ready(function() {
 
     baseMap.bind('viewChanged', function(e) {
         res = baseMap.getResolution();
-        map1.zoomTo(baseMap.getCenter(), baseMap.getExtent()[2] - baseMap.getExtent()[0], baseMap.getExtent()[3] - baseMap.getExtent()[1]);
-        map2.zoomTo(baseMap.getCenter(), baseMap.getExtent()[2] - baseMap.getExtent()[0], baseMap.getExtent()[3] - baseMap.getExtent()[1]);
-        map3.zoomTo(baseMap.getCenter(), baseMap.getExtent()[2] - baseMap.getExtent()[0], baseMap.getExtent()[3] - baseMap.getExtent()[1]);
-        map4.zoomTo(baseMap.getCenter(), baseMap.getExtent()[2] - baseMap.getExtent()[0], baseMap.getExtent()[3] - baseMap.getExtent()[1]);
+        var zoomLevel = 0.15,
+            width = (baseMap.getExtent()[2] - baseMap.getExtent()[0]) * zoomLevel,
+            height = (baseMap.getExtent()[3] - baseMap.getExtent()[1]) * zoomLevel;
+        map1.zoomTo(baseMap.getCenter(), width, height);
+        map2.zoomTo(baseMap.getCenter(), width, height);
+        map3.zoomTo(baseMap.getCenter(), width, height);
+        map4.zoomTo(baseMap.getCenter(), width, height);
         for (var i = 0; i < resToLevel.length; i++) {
             if (res > resToLevel[i]) {
                 break;
@@ -117,7 +120,7 @@ G.ready(function() {
         fillColor: '#F1F419'
     });
 
-    baseMap.view([12957825.80357157,4854717.52384645], 2653.8530305586755, 810.8995371144265);
+    baseMap.view([12957800.543657428,4854644.180560455], 21620.657274331897,6606.311944935471);
 
     var highLight;
 
