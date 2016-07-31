@@ -196,10 +196,6 @@ function zoomOut() {
 }
 
 function sampleModal() {
-    $('#google').attr("src", "images/sample/google.jpg");
-    $('#mapbox').attr("src", "images/sample/osm.jpg");
-    $('#amap').attr("src", "images/sample/amap.jpg");
-    $('#tencent').attr("src", "images/sample/baidu.jpg");
     $('#myModal').modal('show');
 }
 
