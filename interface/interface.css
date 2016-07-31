@@ -17,6 +17,38 @@ body {
     background:#ccc;
 }
 
+.satellite-map {
+    height: 45%;
+    width: 35%;
+    position: absolute;
+    border: 2px solid #ccc;
+    border-radius: 10px
+}
+
+.map-fade {
+    z-index: -1;
+}
+
+#satelliteMap1 {
+    top: 2%;
+    left: 10%;
+}
+
+#satelliteMap2 {
+    top: 2%;
+    right: 10%;
+}
+
+#satelliteMap3 {
+    bottom: 2%;
+    left: 10%;
+}
+
+#satelliteMap4 {
+    bottom: 2%;
+    right: 10%;
+}
+
 .zoom-button {
     z-index: 1;
     position: absolute;
@@ -24,10 +56,18 @@ body {
     padding: 10px;
 }
 
-.help-button {
+#help-button {
     z-index: 1;
     position: absolute;
     bottom: 0;
+    padding: 10px;
+}
+
+#close-button {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
     padding: 10px;
 }
 
@@ -38,22 +78,22 @@ body {
     max-width: 200px;
 }
 
-#google:hover {
+#satelliteMap1:hover {
     border: 5px solid #0f0;
     cursor: pointer;
 }
 
-#mapbox:hover {
+#satelliteMap2:hover {
     border: 5px solid #103DFD;
     cursor: pointer;
 }
 
-#amap:hover {
+#satelliteMap3:hover {
     border: 5px solid #F50D0D;
     cursor: pointer;
 }
 
-#tencent:hover {
+#satelliteMap4:hover {
     border: 5px solid #F1F419;
     cursor: pointer;
 }
@@ -121,4 +161,11 @@ body {
 
 #tencentLegend .legend-polygon-thumb {
     background: #F1F419;
+}
+
+.modal.modal-wide .modal-dialog {
+  width: 80%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
 }

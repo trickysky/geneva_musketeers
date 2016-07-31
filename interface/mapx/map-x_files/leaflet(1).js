@@ -1311,7 +1311,7 @@ var dataframe = (function() {
     //    from the server, but that would inflate the JSON too much.)
     // 2. Create a hidden canvas that we use just to extract the image data
     //    from the Image (using Context2D.getImageData()).
-    // 3. Create a TileLayer.Canvas and add it to the map.
+    // 3. Create a TileLayer.Canvas and add it to the baseMap.
 
     // We want to synchronously create and attach the TileLayer.Canvas (so an
     // immediate call to clearRasters() will be respected, for example), but
@@ -1547,7 +1547,7 @@ var dataframe = (function() {
 
     // The basic idea is that when a mousewheel/DOMMouseScroll
     // event is seen, we disable scroll wheel zooming until the
-    // user moves their mouse cursor or clicks on the map. This
+    // user moves their mouse cursor or clicks on the baseMap. This
     // is slightly trickier than just listening for mousemove,
     // because mousemove is fired when the page is scrolled,
     // even if the user did not physically move the mouse. We
@@ -1591,9 +1591,9 @@ var dataframe = (function() {
 
       preventUnintendedZoomOnScroll(map);
 
-      // Store some state in the map object
+      // Store some state in the baseMap object
       map.leafletr = {
-        // Has the map ever rendered successfully?
+        // Has the baseMap ever rendered successfully?
         hasRendered: false,
         // Data to be rendered when resize is called with area != 0
         pendingRenderData: null
@@ -1601,15 +1601,15 @@ var dataframe = (function() {
 
       if (!HTMLWidgets.shinyMode) return map;
 
-      // Check if the map is rendered statically (no output binding)
+      // Check if the baseMap is rendered statically (no output binding)
       if (!/\bshiny-bound-output\b/.test(el.className)) return map;
 
       map.id = el.id;
 
-      // Store the map on the element so we can find it later by ID
-      $(el).data("leaflet-map", map);
+      // Store the baseMap on the element so we can find it later by ID
+      $(el).data("leaflet-baseMap", map);
 
-      // When the map is clicked, send the coordinates back to the app
+      // When the baseMap is clicked, send the coordinates back to the app
       map.on('click', function(e) {
         Shiny.onInputChange(map.id + '_click', {
           lat: e.latlng.lat,
@@ -1646,14 +1646,14 @@ var dataframe = (function() {
     },
     doRenderValue: function(el, data, map) {
       // Leaflet does not behave well when you set up a bunch of layers when
-      // the map is not visible (width/height == 0). Popups get misaligned
+      // the baseMap is not visible (width/height == 0). Popups get misaligned
       // relative to their owning markers, and the fitBounds calculations
-      // are off. Therefore we wait until the map is actually showing to
+      // are off. Therefore we wait until the baseMap is actually showing to
       // render the value (we rely on the resize() callback being invoked
       // at the appropriate time).
       //
       // There may be an issue with leafletProxy() calls being made while
-      // the map is not being viewed--not sure what the right solution is
+      // the baseMap is not being viewed--not sure what the right solution is
       // there.
       if (el.offsetWidth === 0 || el.offsetHeight === 0) {
         map.leafletr.pendingRenderData = data;
@@ -1682,8 +1682,8 @@ var dataframe = (function() {
         methods.fitBounds.apply(map, data.fitBounds);
       }
 
-      // Returns true if the zoomToLimits option says that the map should be
-      // zoomed to map elements.
+      // Returns true if the zoomToLimits option says that the baseMap should be
+      // zoomed to baseMap elements.
       function needsZoom() {
         return options.zoomToLimits === "always" ||
                (options.zoomToLimits === "first" && !map.leafletr.hasRendered);
@@ -1691,7 +1691,7 @@ var dataframe = (function() {
 
       if (!explicitView && needsZoom()) {
         if (data.limits) {
-          // Use the natural limits of what's being drawn on the map
+          // Use the natural limits of what's being drawn on the baseMap
           // If the size of the bounding box is 0, leaflet gets all weird
           var pad = 0.006;
           if (data.limits.lat[0] === data.limits.lat[1]) {
@@ -1738,9 +1738,9 @@ var dataframe = (function() {
   Shiny.addCustomMessageHandler('leaflet-calls', function(data) {
     var id = data.id;
     var el = document.getElementById(id);
-    var map = el ? $(el).data('leaflet-map') : null;
+    var map = el ? $(el).data('leaflet-baseMap') : null;
     if (!map) {
-      console.log("Couldn't find map with id " + id);
+      console.log("Couldn't find baseMap with id " + id);
       return;
     }
 

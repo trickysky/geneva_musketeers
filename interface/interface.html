@@ -20,8 +20,17 @@
         </div>
     </div>
 
-    <div class="help-button">
+		<div id="satelliteMap1" class="satellite-map map-fade"></div>
+		<div id="satelliteMap2" class="satellite-map map-fade"></div>
+		<div id="satelliteMap3" class="satellite-map map-fade"></div>
+		<div id="satelliteMap4" class="satellite-map map-fade"></div>
+
+    <div id="help-button">
         <button type="button" class="btn btn-default" onclick="sampleModal()">?</button>
+    </div>
+
+    <div id="close-button" class="fade">
+        <button type="button" class="btn btn-default" onclick="closesatelliteMap()">x</button>
     </div>
 
     <div id="legend">
@@ -70,18 +79,18 @@
                     <div id="satellite-images">
                         <div class="row">
                            <div class="col-sm-6 ">
-                                <img id="google" src="images/1/google.png" alt="google" class="center-block">
+                                <img id="google" src="images/sample/google.jpg" alt="google" class="center-block">
                             </div>
                             <div class="col-sm-6">
-                                <img id="amap" src="images/1/amap.png" alt="amap" class="center-block">
+                                <img id="amap" src="images/sample/osm.jpg" alt="amap" class="center-block">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <img id="mapbox" src="images/1/tencent.png" alt="mapbox" class="center-block">
+                                <img id="mapbox" src="images/sample/amap.jpg" alt="mapbox" class="center-block">
                             </div>
                             <div class="col-sm-6">
-                                <img id="tencent" src="images/1/mapbox.png" alt="tencent" class="center-block">
+                                <img id="tencent" src="images/sample/baidu.jpg" alt="tencent" class="center-block">
                             </div>
                          </div>
                     </div>

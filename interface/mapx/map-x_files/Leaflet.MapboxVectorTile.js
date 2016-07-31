@@ -970,7 +970,7 @@ MVTFeature.prototype.getPathsForTile = function(canvasID) {
 MVTFeature.prototype.addTileFeature = function(vtf, ctx) {
   //Store the important items in the tiles list
 
-  //We only want to store info for tiles for the current map zoom.  If it is tile info for another zoom level, ignore it
+  //We only want to store info for tiles for the current baseMap zoom.  If it is tile info for another zoom level, ignore it
   //Also, if there are existing tiles in the list for other zoom levels, expunge them.
   var zoom = this.map.getZoom();
 
@@ -1177,7 +1177,7 @@ MVTFeature.prototype._drawStaticLabel = function(ctx, coordsArray, style) {
   if (!style) return;
   if (!ctx) return;
 
-  // If the corresponding layer is not on the map, 
+  // If the corresponding layer is not on the baseMap, 
   // we dont want to put on a label.
   if (!this.mvtLayer._map) return;
 
@@ -1953,7 +1953,7 @@ module.exports = L.TileLayer.MVTSource = L.TileLayer.Canvas.extend({
         var arrayBuffer = new Uint8Array(xhr.response);
         var buf = new Protobuf(arrayBuffer);
         var vt = new VectorTile(buf);
-        //Check the current map layer zoom.  If fast zooming is occurring, then short circuit tiles that are for a different zoom level than we're currently on.
+        //Check the current baseMap layer zoom.  If fast zooming is occurring, then short circuit tiles that are for a different zoom level than we're currently on.
         if(self.map && self.map.getZoom() != ctx.zoom) {
           //console.log("Fetched tile for zoom level " + ctx.zoom + ". Map is at zoom level " + self._map.getZoom());
           return;
@@ -2103,7 +2103,7 @@ module.exports = L.TileLayer.MVTSource = L.TileLayer.Canvas.extend({
       //Add all layers
       for (var key in this.layers) {
         var layer = this.layers[key];
-        // layer is set to visible and is not already on map
+        // layer is set to visible and is not already on baseMap
         if (!layer._map) {
           map.addLayer(layer);
         }

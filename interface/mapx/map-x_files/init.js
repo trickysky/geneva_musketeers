@@ -14,7 +14,7 @@ $( document ).ready(function() {
   // background selector
   changeBg();
 
-  // story map container action
+  // story baseMap container action
   var storyCont = $("#mapLeftScroll");
   storyCont.on("scroll",updateStoryMaps);
 

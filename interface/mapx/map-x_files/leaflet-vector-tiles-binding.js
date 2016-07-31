@@ -148,7 +148,7 @@ LeafletWidget.methods.glInit = function( idGl, idMap, style, token ){
   // save as leaflet layer
   this.addLayer(glLayer);
   //this.layerManager.addLayer( glLayer, "tile", idGl ); 
-  // we want to have quick access to gl map
+  // we want to have quick access to gl baseMap
   gl = glLayer._glMap ;
   gl.on("load",function(){ 
     Shiny.onInputChange("glLoaded",idGl);
