@@ -24,9 +24,8 @@ G.ready(function() {
     });
 
     var level = 1, res = 20000;
-    var p = G.Proj.WebMercator.project(116.39, 39.9);
     highLightLayer = (new G.Layer.Graphic()).addTo(baseMap);
-    var mapName = mapTileServer["pencil"];
+    var mapName = mapTileServer["googleRoad"];
     tileLayer = new G.Layer.Tile(mapName["url"], {
         cluster: mapName["cluster"]
     });
@@ -99,11 +98,11 @@ G.ready(function() {
             gridLayer.addTo(baseMap);
         });
         highLightLayer.bringToTop();
-        console.log({
-            'getExtent': String(baseMap.getExtent()[2] - baseMap.getExtent()[0]) + ',' + String(baseMap.getExtent()[3] - baseMap.getExtent()[1]),
-            'getSize': baseMap.getSize()[0] + ',' + baseMap.getSize()[1],
-            'center':baseMap.getCenter()[0] + ',' + baseMap.getCenter()[1]
-        });
+        // console.log({
+        //     'getExtent': String(baseMap.getExtent()[2] - baseMap.getExtent()[0]) + ',' + String(baseMap.getExtent()[3] - baseMap.getExtent()[1]),
+        //     'getSize': baseMap.getSize()[0] + ',' + baseMap.getSize()[1],
+        //     'center':baseMap.getCenter()[0] + ',' + baseMap.getCenter()[1]
+        // });
     });
 
     graphicLayer = (new G.Layer.Graphic()).addTo(baseMap);
@@ -202,4 +201,17 @@ function sampleModal() {
 function closesatelliteMap() {
     $('.satellite-map').addClass('map-fade');
     $('#close-button').addClass('fade');
+}
+
+function viewToCongo() {
+    if (tileLayer) {
+        tileLayer.remove();
+    }
+    var mapName = mapTileServer["googleRoad"];
+    tileLayer = new G.Layer.Tile(mapName["url"], {
+        cluster: mapName["cluster"]
+    });
+    tileLayer.addTo(baseMap);
+    tileLayer.bringToBottom();
+    baseMap.view([1704458.9328009544,-492795.4834811784], 8959.174255834427,3596.11299991142);
 }
