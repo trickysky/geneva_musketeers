@@ -42,9 +42,34 @@
     <script type="text/javascript" charset="UTF-8" src="./GeoTag-X · Project_ Yamuna People · Contribute_files/element_main.js"></script>
     <script type="text/javascript" charset="utf-8" async="" src="./GeoTag-X · Project_ Yamuna People · Contribute_files/timeline.9f433c659a9cf12beb8b6027a6d8c82c.js"></script>
     <div id="BIJIA_HAS_BUILT" class="chrome"></div>
+    <style type="text/css">
+      #help-icon:hover {
+        cursor: pointer;
+      }
+    </style>
   </head>
   
   <body data-user-id="0" data-user-name="#geotagx-anonymous" style="position: relative; min-height: 100%; top: 0px;">
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #48cfad;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                    Standard
+                </h4>
+                </div>
+                <div class="modal-body">
+                    <img src="standard/local1.jpg" style="height:100%;width:100%;">
+                    <img src="standard/local2.jpg" style="height:100%;width:100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="head-section">
       <div class="navbar navbar-default navbar-fixed-top container-fluid" style="padding-left:10px; border-bottom:10px">
         <div id="incompatible-browser-message" class="show-on-incompatible-browser collapse in">
@@ -205,7 +230,14 @@
             </div>
           </div>
           <div class="question" data-key="waterPeople" data-type="binary" data-index="1" style="display: block;">
-            <header class="title">Please evaluate the disaster grade?</header>
+            <header class="title">Please evaluate the disaster grade? <i id="help-icon" style="font-size: 20px; color: #48cfad; margin-left: 10px;" class="fa fa-question-circle-o" aria-hidden="true"></i></header>
+            
+            <script type="text/javascript">
+              $('#help-icon').bind('click', function(){
+                $('#myModal').modal('show');
+              });
+            </script>
+
             <div class="answer" data-key="waterPeople">
               <button class="btn btn-answer btn-success btn-sm" value="Yes" onclick="location.href='local3.htm'">Grade 1</button>
               <button class="btn btn-answer btn-warning  btn-sm" value="No" onclick="location.href='local3.htm'">Grade 2</button>
@@ -27013,7 +27045,14 @@
       </div>
       <div class="status-message" style="display: none;"></div>
     </div>
-    <i id="back-to-top" style="display: inline;"></i>
+    <i id="back-to-top" style="display: inline;">
+      <i class="fa fa-angle-double-right" aria-hidden="true" style="margin-left: 16px;margin-top: 11px;"></i>
+    </i>
+    <script type="text/javascript">
+      $('#back-to-top').bind('click', function() {
+        location.href = '../result/domain.html'
+      })
+    </script>
     <iframe frameborder="0" class="goog-te-menu-frame skiptranslate" style="visibility: visible; box-sizing: content-box; width: 924px; height: 307px; display: none;" src="./GeoTag-X · Project_ Yamuna People · Contribute_files/saved_resource(1).html"></iframe>
     <iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./GeoTag-X · Project_ Yamuna People · Contribute_files/saved_resource(2).html"></iframe>
   </body>
