@@ -25,7 +25,7 @@ G.ready(function() {
 
     var level = 1, res = 20000;
     highLightLayer = (new G.Layer.Graphic()).addTo(baseMap);
-    var mapName = mapTileServer["googleRoad"];
+    var mapName = mapTileServer["pencil"];
     tileLayer = new G.Layer.Tile(mapName["url"], {
         cluster: mapName["cluster"]
     });
