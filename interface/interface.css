@@ -74,8 +74,8 @@ body {
 #satellite-images img {
     border: 2px solid navajowhite;
     border-radius: 20px;
-    max-height: 200px;
-    max-width: 200px;
+    height: 200px;
+    width: 200px;
 }
 
 #satelliteMap1:hover {

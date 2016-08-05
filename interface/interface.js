@@ -56,7 +56,7 @@ G.ready(function() {
         maxExtent: [-2e7, -2e7, 2e7, 2e7],
         hideLogo: true
     });
-    var map3Name = mapTileServer["mapbox"];
+    var map3Name = mapTileServer["arcgis"];
     map3tileLayer = new G.Layer.Tile(map3Name["url"], {
         cluster: map3Name["cluster"]
     });
