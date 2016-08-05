@@ -12,7 +12,8 @@ var mapTileServer = {
     "midnight": { "url": "https://s{s}.geohey.com/s/mapping/midnight/all?z={z}&x={x}&y={y}&ak=ZmVmODVkNzZhZjk3NDUzNWFlYjQ4ODcwOGFhMWQ5ZGQ", "cluster": ['1', '2', '3', '4', '5', '6', '7', '8']},
     "dark": { "url": "https://s{s}.geohey.com/s/mapping/dark/all?z={z}&x={x}&y={y}&ak=ZmVmODVkNzZhZjk3NDUzNWFlYjQ4ODcwOGFhMWQ5ZGQ", "cluster": ['1', '2', '3', '4', '5', '6', '7', '8']},
     "pencil": {"url": "https://s{s}.geohey.com/s/mapping/pencil/all?z={z}&x={x}&y={y}&ak=ZmVmODVkNzZhZjk3NDUzNWFlYjQ4ODcwOGFhMWQ5ZGQ", "cluster": ['1', '2', '3', '4', '5', '6', '7', '8']},
-    "mapbox": {"url": "http://a.tiles.mapbox.com/v4/bobbysud.79c006a5/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYm9iYnlzdWQiLCJhIjoiTi16MElIUSJ9.Clrqck--7WmHeqqvtFdYig", "cluster": []}
+    "mapbox": {"url": "http://a.tiles.mapbox.com/v4/bobbysud.79c006a5/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYm9iYnlzdWQiLCJhIjoiTi16MElIUSJ9.Clrqck--7WmHeqqvtFdYig", "cluster": []},
+    "arcgis": {"url": "http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", "cluster": []}
 }
     ;
 G.ready(function() {
